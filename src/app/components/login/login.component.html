@@ -1,0 +1,18 @@
+<div class="container w-50">
+  <div id="cloud"></div>
+  <div id="login" class="m-5 p-3 text-light">
+    <form #form="ngForm" (ngSubmit)="login(form)">
+      <div class="mb-3">
+        <label for="username">Username *</label>
+        <input type="text" id="username" class="form-control" ngModel name="username"/>
+      </div>
+      <div class="mb-3">
+        <label for="password">Password *</label>
+        <input type="password" id="password" class="form-control" ngModel name="password"/>
+      </div>
+      <div>
+        <button type="submit" class="btn btn-success">Login</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,75 @@
+<header
+  id="navbar"
+  class="navbar navbar-dark sticky-top flex-nowrap p-0 shadow"
+>
+  <nav class="navbar navbar-expand navbar-light">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a
+          class="nav-link active"
+          aria-current="page"
+          [routerLink]="['/']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          *ngIf="!isLoggedUser()"
+          >Home</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          [routerLink]="['/login']"
+          routerLinkActive="active"
+          *ngIf="!isLoggedUser()"
+          >Login</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          [routerLink]="['/registrati']"
+          routerLinkActive="active"
+          *ngIf="!isLoggedUser()"
+          >Registrati</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          [routerLink]="['/utenti']"
+          routerLinkActive="active"
+          *ngIf="isLoggedUser()"
+          >Utenti</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          [routerLink]="['/clienti']"
+          routerLinkActive="active"
+          *ngIf="isLoggedUser()"
+          >Clienti</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          [routerLink]="['/fatture']"
+          routerLinkActive="active"
+          *ngIf="isLoggedUser()"
+          >Fatture</a
+        >
+      </li>
+    </ul>
+  </nav>
+  <div class="navbar-nav">
+    <div class="nav-item text-nowrap">
+      <a
+        class="nav-link px-3 btn btn-danger text-white m-2"
+        *ngIf="isLoggedUser()"
+        (click)="Logout()"
+        >Logout</a
+      >
+    </div>
+  </div>
+</header>
